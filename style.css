@@ -1,0 +1,385 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* header */
+.kepala{
+    display: flex;
+    margin-left: 107px;
+    justify-content: space-between ;
+    align-items: center;
+}
+header img{
+    float: left;
+    padding: 5px 0;
+    height: 55px;
+}
+header ul{
+    float: right;
+}
+header ul li{
+    display: inline-block;
+}
+header ul li a{
+    padding: 25px 20px;
+    display: inline-block;
+    color:var(--clr-ul-li-a);
+}
+header ul li a:hover{
+    background-color: #148f77;
+    color: white;
+}
+.active{
+    background-color: #148f77;
+    color:var(--clr-h1-active);
+}
+
+/* banner */
+.banner{
+    height: 82vh;
+    background-image: url(./img/banner2.jpeg);
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(20,143,119,.6);
+}
+
+.banner h2{
+    color: white;
+    z-index: 1;
+    padding: 20px 25px;   
+}
+/* animasi pada h2 */
+.banner >*{
+    overflow: hidden;
+    white-space: nowrap;
+    animation: bannerAnim 3s steps(27) infinite;
+}
+@keyframes bannerAnim{
+    from{width: 0;}
+    to{width: 25%;}
+}
+
+/* about */
+section{
+    padding: 30px 0;
+}
+
+section h3{
+    text-align: center;
+    padding: 25px 0;
+    color:  #148f77;
+    margin-bottom: 25px;
+}
+.about img{
+    padding-top: 30px;
+}
+.about p{
+    color: #666;
+    word-spacing: 2px;
+    line-height: 25px;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+
+/* skill */
+.skills{
+    background-color: var(--clr-skills);
+}
+
+h5{
+    float: left;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.cont{
+    width: 50%;
+    background-color:  rgba(20,143,119,.6);
+    margin-left: 25%;   
+}
+
+.skill{
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:white;
+    height: 15px;
+    margin-bottom: 25px;
+}
+
+.html{width: 75%;background-color: #148f77; }
+.js{width: 65%;background-color: #148f77; }
+.mco{width: 90%;background-color: #148f77;}
+.web{width: 80%;background-color: #148f77;}
+.kom{width: 75%;background-color: #148f77;}
+.team{width: 80%;background-color: #148f77;}
+.leader{width: 95%;background-color: #148f77;}
+
+/* contact */
+.col-3{
+    width: 33%;
+    box-sizing: border-box;
+    float: left;
+    padding: 50px 10px;
+    text-align: center;
+    color:var(--clr-col-3);
+}
+.col-3 h4{
+    padding-bottom: 90px;
+    border-bottom: 1px solid var(--clr-3-h4);
+    margin-bottom: 15px;
+}
+
+/* texarea dan input */
+.form p{
+    text-align: center;
+    padding: 20px 0;
+    color:  #148f77;
+    margin-bottom: 25px;
+}
+
+input {
+    border: 1px solid rgb(197, 186, 186);
+    box-sizing: border-box;
+    width: 400px;
+    height: 30px;
+    margin: 10px 0;
+    
+}
+
+textarea {
+    border: 1px solid rgb(197, 186, 186) ;
+    box-sizing: border-box;
+    width: 400px;
+    height: 120px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.form-isi{
+    text-align: center;
+}
+
+button{
+    border: 1px solid #148f77;
+    color:#148f77;
+    font-size: 15px;
+    width:150px;
+    text-align:center;
+    height: 50px;
+    margin-bottom: 50px;
+    background-color: white;
+}
+
+button:hover{
+    background-color:#148f77 ;
+    color: white;
+    border: none;
+}
+
+/* Footer */
+footer{
+    padding: 30px 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.medsos ul li{
+    display: inline-block;
+    color: white;
+    margin-right: 10px;
+}
+
+.label{
+    background-color: #148f77;
+    color: white;
+}
+
+
+
+/* toggol Dark/Light */
+
+.ld{
+    margin-right: 70px;
+}
+.ld span{
+    font-size: 10px;
+    color: black;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 52px;
+	height: 27px;
+	background: grey;
+	float: right;
+	border-radius: 100px;
+	position: relative;
+    margin-top: 5px;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: #148f77;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 45px;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 50ms !important;
+  transition-delay: 0 !important;
+}
+
+/* penyesuaian warna ketika darkmode */
+html{
+    --clr-body:white;
+    --clr-ul-li-a:black;
+    --clr-skills:#f9f9f9;
+    --clr-h1-active:black;
+    --clr-h2:#373046;
+    --clr-p:#666;
+    --clr-col-3:black;
+    --clr-3-h4:#ddd;
+}
+
+html[data-theme='dark'] {
+    background-color: black;
+    --clr-body:black;
+    --clr-ul-li-a:white;
+    --clr-skills:rgb(31, 26, 26);
+    --clr-h1-active:white;
+    --clr-h2: white;
+    --clr-p:white;
+    --clr-col-3:white;
+    --clr-3-h4:#148f77;
+
+}
+
+/* tampilan responsif tablet */
+@media screen and (max-width:768px){
+    .banner h2{
+        font-size: 95%;
+    }
+
+    .container{
+        width: 90%;
+    }
+
+    header ul{
+        text-align: center;
+        float: none;
+    }
+
+   
+    .hero img{
+        width: 30%;
+    }
+
+    .hero-content{
+        width: 60%;
+        
+    }
+    
+    .hero h1 {
+        font-size: 250% ;
+        padding: 2px;
+    }
+
+
+    .box .col-3{
+        width: 100%;
+        float: none;
+        margin-bottom: 20px;
+    }
+    .main .cont{
+      margin-top: 30px;
+
+    }
+
+    .form input{
+        width: 50%;
+    }
+
+    .form textarea{
+        width: 50%;
+    }
+
+    .form button{
+        width: 20%;
+    }
+
+    .ld{
+        float: none;
+        justify-content: center;
+        display: flex;
+    }
+
+    .ld span{
+        display: none;
+        
+    }
+    
+
+}
+
